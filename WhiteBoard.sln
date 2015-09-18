@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhiteBoard", "WhiteBoard\WhiteBoard.csproj", "{9233EB48-2668-4FEB-AC4D-106BD165306F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhiteBoard.TodoList", "WhiteBoard.TodoList\WhiteBoard.TodoList.csproj", "{70BB4EED-05FD-44D7-BA53-806E645E4219}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9233EB48-2668-4FEB-AC4D-106BD165306F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9233EB48-2668-4FEB-AC4D-106BD165306F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9233EB48-2668-4FEB-AC4D-106BD165306F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9233EB48-2668-4FEB-AC4D-106BD165306F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70BB4EED-05FD-44D7-BA53-806E645E4219}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70BB4EED-05FD-44D7-BA53-806E645E4219}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70BB4EED-05FD-44D7-BA53-806E645E4219}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70BB4EED-05FD-44D7-BA53-806E645E4219}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
