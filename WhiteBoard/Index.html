@@ -2,7 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Whiteboard SignalR</title>
-    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="Scripts/jquery.js"></script>
     <script src="Scripts/jquery.signalR-2.2.0.min.js"></script>
     <script src="/signalr/hubs"></script>
     <script src="Scripts/DrawingBoard.js"></script>
@@ -17,30 +18,63 @@
         }
     </style>
 </head>
-<body>
-
-    <div>
-        <div>
-            <label for="color">Color: </label>
-            <select id="color">
-                <option>black</option>
-                <option>red</option>
-                <option>green</option>
-                <option>blue</option>
-                <option>yellow</option>
-                <option>pink</option>
-            </select>
+<body class="container-fluid">
+    <div class="row">
+        <div class="text-center">
+            <div class="page-header">
+                <h3>Estudo sobre SignalR</h3>
+            </div>
         </div>
-        <canvas id="canvas" width="300" height="300"></canvas>
-        <div>
-            <button id="clear">Clear canvas</button>
+        <div class="col-md-6">
+            <div class="col-md-12">
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        Escolha a cor e desenhe no quadro branco
+                    </div>
+                    <div class="panel-body">
+                        <p>Color: </p>
+                        <select id="color" class="form-control">
+                            <option>black</option>
+                            <option>red</option>
+                            <option>green</option>
+                            <option>blue</option>
+                            <option>yellow</option>
+                            <option>pink</option>
+                        </select>
+
+                        <div class="col-md-12">
+                            <canvas id="canvas" style="width: 100%; height: 300px;"></canvas>
+                        </div>
+                        <div class="col-md-12">
+                            <button id="clear" class="btn btn-default">Clear canvas</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    Teste de escrita
+                </div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <input name="txtword" type="text" class="form-control" />
+                        <br />
+                        <button title="Salvar" type="submit" id="btnsalvar" class="btn btn-primary pull-right">Salvar</button>
+                    </div>
+                    <div class="col-md-8">
+                        <br />
+                        <br />
+                        <br />
+                        <ul id="textoSalvo" class="list-group">
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div>
-        <h4>Teste de escrita</h4>
-        <input name="txtword" type="text" style="width: 500px;" />
-        <button title="Salvar" type="submit" id="btnsalvar">Salvar</button>
-    </div>
+
 </body>
 </html>

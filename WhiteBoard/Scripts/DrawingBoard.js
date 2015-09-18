@@ -70,6 +70,7 @@
 
     $("#btnsalvar").click(function () {
         hub.server.saveText(inputText.val());
+        inputText.val('');
     });
 
     function atualizarTexto(texto) {
@@ -88,6 +89,13 @@
     hub.client.writeText = function (text) {
         atualizarTexto(text);   //Ou pode ser atualizado diretamente por aqui assim:
                                 //inputText.val(texto);
+    }
+
+    hub.client.showTextSaved = function (text) {
+        if ($("#textoSalvo").children("li").size() === 0) {
+            $("<li class='list-group-item active'>Textos já digitados</li>").appendTo("#textoSalvo");
+        }
+        $("<li class='list-group-item'>" + text + "</li>").appendTo("#textoSalvo");
     }
     // Voila!
     $.connection.hub.start()

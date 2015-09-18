@@ -21,9 +21,9 @@ namespace WhiteBoard.Hubs
             return Clients.Others.writeText(text);
         }
 
-        //public void SaveText(string text)
-        //{
-            
-        //}
+        public Task SaveText(string text)
+        {
+            return Clients.All.showTextSaved(text);
+        }
     }
 }
