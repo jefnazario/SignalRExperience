@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>SignalR Com AngularJs</title>
+</head>
+<body>
+    <h1>Hello World</h1>
+
+    <div data-ng-app="app" data-ng-controller="SignalRAngularCtrl">
+        <input type="button" name="GreetAll" value="Greet All" ng-click="greetAll()" />
+        <span>{{text}}</span>
+    </div>
+
+    <script src="Scripts/jquery-1.6.4.min.js"></script>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/jquery.signalR-2.2.0.min.js"></script>
+    <script src="signalr/hubs"></script>
+    <script type="text/javascript">
+        var app = angular.module('app', []);
+        app.value('$', $);
+
+        function SignalRAngularCtrl($scope, $, $rootScope) {
+            $scope.text = "";
+
+            $scope.greetAll = function () {
+                sendRequest();
+            }
+
+            var updateGreetingMessage = function (text) {
+                $scope.text = text;
+            }
+
+            function sendRequest() {
+                $.connection.helloWorldHub.server.greetAll();
+            }
+
+            $.connection.hub.logging = true;
+
+            $.connection.helloWorldHub.client.acceptGreet = function (message) {
+                $rootScope.$apply(function() {
+                    updateGreetingMessage(message);
+                });
+            }
+
+            $.connection.hub.start()
+                .done(function() { 
+                    console.log("Connected: " + $.connection.hub.id);
+                    sendRequest();
+                })
+                .fail(function() { console.log("Fail to connect on server..."); });
+        }
+
+        app.controller('SignalRAngularCtrl', SignalRAngularCtrl);
+        SignalRAngularCtrl.$inject = ['$scope', '$', '$rootScope'];
+    </script>
+</body>
+</html>

@@ -40,7 +40,7 @@
     ///////////////////////////////////////////////////////////////
     // SignalR specific code
     ///////////////////////////////////////////////////////////////
-
+    $.connection.hub.logging = true;
     var hub = $.connection.drawingBoard;
     hub.state.color = $("#color").val(); // Accessible from server
 

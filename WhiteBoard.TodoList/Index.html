@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="TodoApp">
+<head>
+    <title>Todo List</title>
+    <link href="Content/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="Content/angular/angular.js"></script>
+    <script src="Scripts/jquery.js"></script>
+    <script src="Scripts/jquery.signalR-2.2.0.js"></script>
+    <script src="/signalr/hubs"></script>
+    <script src="Scripts/TodoScript.js"></script>
+    <script src="Content/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body class="container-fluid" ng-controller="TodoCtrl">
+    <div class="row">
+        <div class="text-center">
+            <div class="page-header">
+                <h3>To Do List</h3>
+            </div>
+        </div>
+        
+        <div class="container">
+            <!--<div class="col-md-6">
+                <ul class="list-inline">
+                    <li ng-repeat="online in usuariosOnline">
+                        {{ online }}
+                    </li>
+                </ul>
+            </div>-->
+            <div class="form-group form-inline">
+                
+                <!--<div id="connectionStatus"></div>
+
+                    <div>{{Task}}</div>
+
+                    <input id="taskName" type="text"/>
+                    <input type="button" name="Send Task" value="Send Task" data-ng-click="sendTask()" />-->
+
+                Nova tarefa: 
+                <input type="text" name="novatarefa" value="" placeholder="Digita a nova tarefa" class="form-control" ng-model="tarefaModelo.descricao"/>
+                <a ng-click="adicionarTarefa()" class="btn btn-sm btn-success"><i class="glyphicon-plus"></i> Add</a>
+            </div>
+            
+            <table class="table table-bordered table-responsive table-striped" ng-show="listaDeTarefas.length > 0">
+                <thead>
+                    <tr>
+                        <td></td>
+                        <td>Tarefa</td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="tarefa in listaDeTarefas">
+                        <td><input type="checkbox" name="tarefacompletada" ng-checked="tarefa.completa" /></td>
+                        <td>{{ tarefa.descricao }}</td>
+                        <td><a ng-click="excluirTarefa()" class="btn btn-sm btn-danger">Excluir</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    
+</body>
+</html>
